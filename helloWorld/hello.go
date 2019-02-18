@@ -1,6 +1,10 @@
-package main
+package hello
 
-import "fmt"
+import (
+	"fmt"
+	"io"
+	"os"
+)
 
 const englishPrefix = "Hello "
 const spanishHelloPrefix = "Hola "
@@ -8,6 +12,13 @@ const frenchHelloPrefix = "Bonjour "
 
 func main() {
 	fmt.Println(Hello("world", ""))
+
+	Greet(os.Stdout, "Will")
+}
+
+// Greet prints hello + the name passed int
+func Greet(writer io.Writer, name string) {
+	fmt.Fprintf(writer, "Hello, %s", name)
 }
 
 // Hello returns hello
