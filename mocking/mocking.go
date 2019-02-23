@@ -23,6 +23,7 @@ type ConfigurableSleeper struct {
 
 // Sleep will sleep
 func (c *ConfigurableSleeper) Sleep() {
+	fmt.Println(c)
 	c.sleep(c.duration)
 }
 
